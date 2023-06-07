@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0F3F6;
+}
+
+.container {
+    position: relative;
+    max-width: 432px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container .form {
+    padding: 32px;
+}
+
+.container .form .title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 64px;
+    background-color: #4070F4;
+    border-radius: 24px;
+}
+
+.form .input-field {
+    position: relative;
+    height: 48px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.input-field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 32px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: #4070F4;
+}
+
+.input-field svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 24px;
+}
+
+.input-field input:is(:focus, :valid)~svg {
+    color: #4070F4;
+}
+
+.form .text {
+    color: #333;
+    font-size: 14px;
+}
+
+.form .button {
+    margin-top: 36px;
+}
+
+.form .button input {
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    /* letter-spacing: 1px; */
+    border-radius: 8px;
+    background-color: #4070F4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input {
+    background-color: #265DF2;
+}
+
+.qr-image-box {
+    opacity: 0;
+    transition: height 0.2s ease;
+}
+
+.qr-image-box.active {
+    padding: 24px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
+    margin: 10px auto;
+    transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-error {
+    animation: shakeanimation 0.1s linear 10;
+}
+
+@keyframes shakeanimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
