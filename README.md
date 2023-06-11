@@ -1,1 +1,0 @@
-# zatca-qr-code
